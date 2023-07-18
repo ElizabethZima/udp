@@ -11,6 +11,9 @@ int main(int argc, char *argv[]){
 
     QCoreApplication a(argc, argv);
 
+
+    UdpReceiver ur;
+
     QUdpSocket qus;
 
     qus.bind(QHostAddress("127.0.0.1"), PORT+1);
@@ -19,10 +22,8 @@ int main(int argc, char *argv[]){
 
     std::cout << "--- Sender ---" << std::endl;
 
-    for(int i = 0; i < 100; ++i)
+    for(int i = 0; i < 10; ++i)
         qus.writeDatagram(msg, QHostAddress("127.0.0.1"), PORT);
-
-    UdpReceiver ur;
 
 
     std::cout << "--- Recevier ---" << std::endl;

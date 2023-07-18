@@ -28,7 +28,6 @@ QObject(p){
 
     {
 
-        qDebug() << "In";
         ba.resize(uSocket->pendingDatagramSize());
 
         uSocket->readDatagram(ba.data(), ba.size());
@@ -36,4 +35,5 @@ QObject(p){
         std::cout << ba.data() << std::endl;
 
     }
-    }
+
+}
