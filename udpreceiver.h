@@ -8,7 +8,7 @@ class UdpReceiver : public QObject{
 
 Q_OBJECT public:
 
-    UdpReceiver(QObject *p = 0);
+    UdpReceiver(QObject *p = nullptr);
 
     ~UdpReceiver();
 public slots:

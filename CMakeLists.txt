@@ -15,7 +15,7 @@ find_package(Qt5 COMPONENTS
         Network
         REQUIRED)
 
-add_executable(udp main.cpp udpreceiver.cpp udpreceiver.h)
+add_executable(udp main.cpp udpreceiver.cpp udpreceiver.h udpserver.cpp udpserver.h)
 target_link_libraries(udp
         Qt5::Core
         Qt5::Gui

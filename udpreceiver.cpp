@@ -1,8 +1,7 @@
 #include "udpreceiver.h"
 #include <QByteArray>
 #include <iostream>
-
-const quint16 PORT = 2333;
+extern const quint16 PORT;
 
 UdpReceiver::UdpReceiver(QObject *p) :
 
@@ -14,26 +13,28 @@ QObject(p){
 
         connect(uSocket, SIGNAL(readyRead()), this, SLOT(receive()));
 }
-        UdpReceiver::~UdpReceiver(){
 
+
+UdpReceiver::~UdpReceiver(){
     delete uSocket;
 }
 
 
-    void UdpReceiver::receive(){
+void UdpReceiver::receive(){
 
     QByteArray ba;
 
-    while(uSocket->hasPendingDatagrams())
+    std::cout << " ";
 
-    {
+    qint16 sizedata = 1;
 
-        ba.resize(uSocket->pendingDatagramSize());
+    while(sizedata != 0){
 
+        ba.resize(sizedata);
         uSocket->readDatagram(ba.data(), ba.size());
-
         std::cout << ba.data() << std::endl;
 
+        sizedata--;
     }
 
 }
