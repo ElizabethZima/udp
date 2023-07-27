@@ -26,15 +26,9 @@ void UdpReceiver::receive(){
 
     std::cout << " ";
 
-    qint16 sizedata = 1;
-
-    while(sizedata != 0){
-
-        ba.resize(sizedata);
+        ba.resize(uSocket->hasPendingDatagrams());
         uSocket->readDatagram(ba.data(), ba.size());
         std::cout << ba.data() << std::endl;
 
-        sizedata--;
-    }
 
 }

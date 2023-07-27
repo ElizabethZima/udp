@@ -18,8 +18,6 @@ int main(int argc, char *argv[]){
     udpserver udpserver(2333);
     udpserver.write();
 
-
-
     std::cout << "--- Recevier ---" << std::endl;
 
     return a.exec();

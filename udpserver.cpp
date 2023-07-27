@@ -13,7 +13,7 @@ void udpserver::write() {
 
     std::cout << "--- Sender ---" << std::endl;
 
-    for (int i = 0; i < 10; ++i)
+
         serv->writeDatagram(msg, QHostAddress("127.0.0.1"), PORT);
 
 }
